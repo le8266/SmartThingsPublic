@@ -1,5 +1,5 @@
 /**
- *  Mi Connector (v.0.0.46)
+ *  Mi Connector (v.0.0.66)
  *
  * MIT License
  *
@@ -377,8 +377,9 @@ def addDevice(){
     if(!child){
         def dth = null
         def name = null
+        def nameSpace = "fison67"
 
-        if(params.type == "zhimi.airpurifier.m1" || params.type == "zhimi.airpurifier.v1" || params.type == "zhimi.airpurifier.v2" || params.type ==  "zhimi.airpurifier.v3" || params.type ==  "zhimi.airpurifier.v6" || params.type ==  "zhimi.airpurifier.v7" || params.type ==  "zhimi.airpurifier.m2" || params.type ==  "zhimi.airpurifier.ma2" || params.type ==  "zhimi.airpurifier.mc1" || params.type == "zhimi.airpurifier.mc2" || params.type == "zhimi.airpurifier.sa2" || params.type == "zhimi.airpurifier.ma4" || params.type == "zhimi.airpurifier.mb3"){
+        if(params.type == "zhimi.airpurifier.m1" || params.type == "zhimi.airpurifier.v1" || params.type == "zhimi.airpurifier.v2" || params.type ==  "zhimi.airpurifier.v3" || params.type ==  "zhimi.airpurifier.v6" || params.type ==  "zhimi.airpurifier.v7" || params.type ==  "zhimi.airpurifier.m2" || params.type ==  "zhimi.airpurifier.ma2" || params.type ==  "zhimi.airpurifier.mc1" || params.type == "zhimi.airpurifier.mc2" || params.type == "zhimi.airpurifier.sa2" || params.type == "zhimi.airpurifier.ma4" || params.type == "zhimi.airpurifier.mb3" || params.type ==  "zhimi.airpurifier.va1"){
         	dth = "Xiaomi Air Purifier";
             name = "Xiaomi Air Purifier";
         }else if(params.type == "lumi.gateway.v2" || params.type == "lumi.gateway.mieu01"){
@@ -411,25 +412,31 @@ def addDevice(){
         }else if(params.type == "lumi.bulb"){
         	dth = "Xiaomi Aqara Light"
             name = "Xiaomi Aqara Light"
-        }else if(params.type == "zhimi.humidifier.v1" || params.type == "zhimi.humidifier.ca1" || params.type == "zhimi.humidifier.cb2" || params.type ==  "zhimi.humidifier.cb1"){
+        }else if(params.type == "zhimi.humidifier.v1" || params.type == "zhimi.humidifier.ca1" || params.type == "zhimi.humidifier.cb2" || params.type ==  "zhimi.humidifier.cb1" || params.type == "zhimi.humidifier.ca4"){
         	dth = "Xiaomi Humidifier";
             name = "Xiaomi Humidifier";
         }else if(params.type == "shuii.humidifier.jsq001"){
         	dth = "Xiaomi Humidifier 3";
             name = "Xiaomi Humidifier 3";
-       	}else if(params.type == "deerma.humidifier.mjjsq"){
+       	}else if(params.type == "deerma.humidifier.mjjsq" || params.type == "deerma.humidifier.jsq"){
         	dth = "Xiaomi Humidifier 4";
             name = "Xiaomi Humidifier 4";
-       	}else if(params.type == "zhimi.fan.v1" || params.type == "zhimi.fan.v2" || params.type == "zhimi.fan.v3" || params.type == "zhimi.fan.sa1" || params.type == "zhimi.fan.za1" || params.type == "zhimi.fan.za3" || params.type == "zhimi.fan.za4" || params.type == "dmaker.fan.p5"){	
+       	}else if(params.type == "zhimi.fan.v1" || params.type == "zhimi.fan.v2" || params.type == "zhimi.fan.v3" || params.type == "zhimi.fan.sa1" || params.type == "zhimi.fan.za1" || params.type == "zhimi.fan.za3" || params.type == "zhimi.fan.za4" || params.type == "zhimi.fan.za5"){	
         	dth = "Xiaomi Fan";	
             name = "Xiaomi Fan";	
-        }else if(params.type == "yeelink.light.color1" || params.type == "yeelink.light.color2" || params.type == "yeelink.light.bslamp1" || params.type == "yeelink.light.bslamp2"){
+        }else if(params.type == "dmaker.fan.p5" || params.type == "dmaker.fan.p8" || params.type == "dmaker.fan.p9" || params.type == "dmaker.fan.p10" || params.type == "dmaker.fan.p11"){	
+        	dth = "Xiaomi Fan P";	
+            name = "Xiaomi Fan P";	   
+        }else if(params.type == "zhimi.fan.fa1"){
+        	dth = "Xiaomi Fan Fa1";	
+            name = "Xiaomi Fan Fa1";	   
+        }else if(params.type == "yeelink.light.color1" || params.type == "yeelink.light.color2" ||  params.type == "yeelink.light.color3" ||  params.type == "yeelink.light.color4" ||  params.type == "yeelink.light.color5" || params.type == "yeelink.light.bslamp1" || params.type == "yeelink.light.bslamp2"){
         	dth = "Xiaomi Light";
             name = "Xiaomi Light";
-        }else if(params.type == "yeelink.light.strip1" || params.type == "yeelink.light.strip2" || params.type == "yeelink.light.strip3" || params.type == "yeelink.light.strip4"){
+        }else if(params.type == "yeelink.light.strip1" || params.type == "yeelink.light.strip2" || params.type == "yeelink.light.strip3" || params.type == "yeelink.light.strip4" || params.type == "yeelink.light.strip5" || params.type == "yeelink.light.strip6"){
         	dth = "Xiaomi Light Strip";
             name = "Xiaomi Light Strip";
-        }else if(params.type == "yeelink.light.lamp1" || params.type == "yeelink.light.mono1" || params.type == "yeelink.light.ct2"){
+        }else if(params.type == "yeelink.light.lamp1" || params.type == "yeelink.light.lamp2" ||params.type == "yeelink.light.lamp3" || params.type == "yeelink.light.mono1" || params.type == "yeelink.light.ct2"){
         	dth = "Xiaomi Light Mono";
             name = "Xiaomi Light Mono";
         }else if(params.type == "philips.light.downlight"){
@@ -444,19 +451,22 @@ def addDevice(){
         }else if(params.type == "philips.light.moonlight"){
         	dth = "Xiaomi Philips Bedside Lamp";
             name = "Xiaomi Philips Bedside Lamp";
-        }else if(params.type == "rockrobo.vacuum.v1" || params.type == "roborock.vacuum.c1" || params.type == "roborock.vacuum.m1s" || params.type == "roborock.vacuum.s6" || params.type == "roborock.vacuum.e2"){
+        }else if(params.type == "rockrobo.vacuum.v1" || params.type == "roborock.vacuum.c1" || params.type == "roborock.vacuum.m1s" || params.type == "roborock.vacuum.s6" || params.type == "roborock.vacuum.e2" || params.type == "roborock.vacuum.a10"){
         	dth = "Xiaomi Vacuums";
             name = "Xiaomi Vacuums";
         }else if(params.type == "viomi.vacuum.v6" || params.type == "viomi.vacuum.v7"){
         	dth = "Xiaomi Vacuum Viomi";
             name = "Xiaomi Vacuum Viomi";
+        }else if(params.type == "kxf321.mop.mo001"){
+        	dth = "Xiaomi Vacuum KXF";
+            name = "Xiaomi Vacuum KXF";
         }else if(params.type == "roborock.vacuum.s5" || params.type == "roborock.vacuum.s5e" || params.type == "roborock.vacuum.s6"){
         	dth = "Xiaomi Vacuums2";
             name = "Xiaomi Vacuums2";
         }else if(params.type == "qmi.powerstrip.v1" || params.type == "zimi.powerstrip.v2"){
         	dth = "Xiaomi Power Strip";
             name = "Xiaomi Power Strip";
-        }else if(params.type == "chuangmi.plug.v1" || params.type == "chuangmi.plug.v2" || params.type == "chuangmi.plug.v3" || params.type == "chuangmi.plug.m1"|| params.type == "chuangmi.plug.m2" || params.type == "chuangmi.plug.m3" || params.type == "lumi.plug" || params.type == "chuangmi.plug.hmi205" || params.type == "chuangmi.plug.hmi206"){
+        }else if(params.type == "chuangmi.plug.v1" || params.type == "chuangmi.plug.v2" || params.type == "chuangmi.plug.v3" || params.type == "chuangmi.plug.m1"|| params.type == "chuangmi.plug.m2" || params.type == "chuangmi.plug.m3" || params.type == "lumi.plug" || params.type == "chuangmi.plug.hmi205" || params.type == "chuangmi.plug.hmi206" || params.type == "chuangmi.plug.hmi208"){
         	dth = "Xiaomi Power Plug";
             name = "Xiaomi Power Plug";
         }else if(params.type == "chuangmi.plug.v3"){
@@ -477,6 +487,9 @@ def addDevice(){
         }else if(params.type == "cgllc.airmonitor.b1" || params.type == "cgllc.airmonitor.s1"){
         	dth = "Xiaomi Air Detector";
             name = "Xiaomi Air Detector";
+        }else if(params.type == "cgllc.airm.cgdn1"){
+        	dth = "Xiaomi Air Monitor CGDN1";
+            name = "Xiaomi Air Detector";
         }else if(params.type == "lumi.weather"){
         	dth = "Xiaomi Weather";
             name = "Xiaomi Weather";
@@ -486,7 +499,7 @@ def addDevice(){
 		}else if(params.type == "lumi.smoke"){
         	dth = "Xiaomi Smoke Detector";
             name = "Xiaomi Smoke Detector";
-        }else if(params.type == "yeelink.light.ceiling1" || params.type == "yeelink.light.ceiling2"|| params.type == "yeelink.light.ceiling3"|| params.type == "yeelink.light.ceiling4" || params.type == "yeelink.light.ceiling5"|| params.type == "yeelink.light.ceiling6"|| params.type == "yeelink.light.ceiling7"|| params.type == "yeelink.light.ceiling8"|| params.type == "yeelink.light.ceiling9" || params.type == "yeelink.light.ceiling10"|| params.type == "yeelink.light.ceiling11" || params.type == "yeelink.light.ceiling12" || params.type == "yeelink.light.ceiling13" || params.type == "yeelink.light.ceiling14" || params.type == "yeelink.light.ceiling15.mibt54b"){
+        }else if(params.type == "yeelink.light.ceiling1" || params.type == "yeelink.light.ceiling2"|| params.type == "yeelink.light.ceiling3"|| params.type == "yeelink.light.ceiling4" || params.type == "yeelink.light.ceiling5"|| params.type == "yeelink.light.ceiling6"|| params.type == "yeelink.light.ceiling7"|| params.type == "yeelink.light.ceiling8"|| params.type == "yeelink.light.ceiling9" || params.type == "yeelink.light.ceiling10"|| params.type == "yeelink.light.ceiling11" || params.type == "yeelink.light.ceiling12" || params.type == "yeelink.light.ceiling13" || params.type == "yeelink.light.ceiling14" || params.type == "yeelink.light.ceiling15"  || params.type == "yeelink.light.ceiling16" || params.type == "yeelink.light.ceiling17" || params.type == "yeelink.light.ceiling18" || params.type == "yeelink.light.ceiling19" || params.type == "yeelink.light.ceiling20" || params.type == "yeelink.light.ceiling15.mibt54b" || params.type == "yeelink.light.ceil26"){
         	dth = "Xiaomi Light Ceiling";
             name = "Xiaomi Light Ceiling";
         }else if(params.type == "philips.light.ceiling" || params.type == "philips.light.zyceiling"){
@@ -531,16 +544,21 @@ def addDevice(){
         }else if(params.type == "lumi.acpartner.v3"){
         	dth = "Xiaomi Gateway2";
             name = "Xiaomi Gateway2";
-        }else if(params.type == "ble.mitemperature" || params.type == "ble.einktemperature"){
+        }else if(params.type == "ble.mitemperature" || params.type == "ble.einktemperature" || params.type == "ble.einktemperature.cleargrass"){
         	dth = "Xiaomi Bluetooth Weather";
             name = "Xiaomi Bluetooth Weather";
         }else if(params.type == "lumi.vibration"){
         	dth = "Xiaomi Vibration Sensor"
             name = "Xiaomi Vibration Sensor"
-        }else if(params.type == "zhimi.heater.za1"){
+        }else if(params.type == "zhimi.heater.za1" || params.type == "zhimi.heater.za2"){
         	dth = "Xiaomi Heater"
             name = "Xiaomi Heater"
-        }else if(params.type == "zhimi.airfresh.va2"){
+        }else if(params.type == "zhimi.heater.mc2"){
+        	nameSpace = "streamorange58819"
+        	dth = "Xiaomi Heater New App"
+            name = "Xiaomi Heater"
+        }
+        else if(params.type == "zhimi.airfresh.va2"){
         	dth = "Xiaomi Air Fresh"
             name = "Xiaomi Air Fresh"
         }else if(params.type == "air.fan.ca23ad9"){
@@ -549,7 +567,12 @@ def addDevice(){
         }else if(params.type == "nwt.derh.wdh318efw1"){
         	dth = "Xiaomi Dehumidifier"
             name = "Xiaomi Dehumidifier"
-        }	
+        }else if(params.type == "deerma.humidifier.jsq1"){
+        	nameSpace = "streamorange58819"
+            dth = "Xiaomi Humidifier Jsq1 New App"
+            name = "Xiaomi Humidifier"
+        }
+        
         
         
         if(dth == null){
@@ -558,7 +581,7 @@ def addDevice(){
             render contentType: "application/javascript", data: resultString
         }else if(params.type == "lumi.ctrl_neutral1" || params.type == "lumi.ctrl_ln1"){
         	try{
-                def childDevice = addChildDevice("fison67", dth, (dni + "-1"), getLocationID(), [
+                def childDevice = addChildDevice(nameSpace, dth, (dni + "-1"), getLocationID(), [
                     "label": name + "1"
                 ])    
                 childDevice.setInfo(settings.address, id, "1")
@@ -579,7 +602,7 @@ def addDevice(){
         	try{
             	def index = 1;
             	for (def i = 0; i <2; i++) {
-                	def childDevice = addChildDevice("fison67", dth, (dni + "-" + index), getLocationID(), [
+                	def childDevice = addChildDevice(nameSpace, dth, (dni + "-" + index), getLocationID(), [
                         "label": name + index
                     ])    
                     childDevice.setInfo(settings.address, id, index.toString())
@@ -601,7 +624,7 @@ def addDevice(){
             }
         }else if(params.type == "virtual.remote.tv" || params.type == "virtual.remote.custom" || params.type == "virtual.remote.air"){
      		dni = "mi-connector-" + id.toLowerCase() + "-" + new Date().getTime()
-        	def childDevice = addChildDevice("fison67", dth, dni, getLocationID(), [
+        	def childDevice = addChildDevice(nameSpace, dth, dni, getLocationID(), [
                 "label": name
             ])    
             childDevice.setInfo(settings.address, id)
@@ -613,7 +636,7 @@ def addDevice(){
             render contentType: "application/javascript", data: resultString
         }else{
             try{
-                def childDevice = addChildDevice("fison67", dth, dni, getLocationID(), [
+                def childDevice = addChildDevice(nameSpace, dth, dni, getLocationID(), [
                     "label": name
                 ])    
                 childDevice.setInfo(settings.address, id)
